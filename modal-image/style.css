@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f7fb;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .container {
+  justify-content: center;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15xp;
+}
+
+main .container .image {
+  cursor: pointer;
+  height: 250px;
+  width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 10px solid #fff;
+  overflow: hidden;
+}
+
+main .container .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.2s linear;
+}
+
+main .container .image:hover img {
+  transform: scale(1.1);
+}
+
+main .popup-image {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+}
+
+main .popup-image span {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 60px;
+  font-weight: bolder;
+  color: #eee;
+  cursor: pointer;
+  z-index: 1;
+}
+
+main .popup-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  transform: translate(-50%, -50%);
+  border: 5px solid #eee;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+@media (max-width: 720px) {
+  main .popup-image img {
+    width: 95%;
+  }
+}

@@ -1,0 +1,88 @@
+@bgColor: #f6f7fb;
+@base: #3498db;
+@color: #e0e0e0;
+@accent: #27ae60;
+@borderRadius: 4px;
+
+body {
+  background: @bgColor;
+}
+
+main {
+  // text-align: center;
+  margin: 1em 0;
+}
+.btnSignin {
+  display: inline-block;
+  border: 1px solid darken(@base, 50%);
+  outline: none;
+  padding: 10px 20px;
+  line-height: 1.4;
+  background: @base;
+  border-radius: @borderRadius;
+  border: 1px solid darken(@base, 30%);
+  color: lighten(@color, 10%);
+  text-shadow: darken(@color, 80%) -1px -1px 0px;
+  top: 45%;
+  left: 47%;
+  position: absolute;
+  transition: padding-right 0.3s ease;
+  font-weight: 700;
+  box-shadow: 0 1px 0 lighten(@base, 30%) inset, 0px 1px 0 lighten(@base, 10%);
+}
+
+.btnSignin:hover {
+  box-shadow: 0 0 10px darken(@base, 10%) inset, 0px 1px 0 lighten(@base, 10%);
+  color: lighten(@color, 20%);
+}
+
+.btnSignin:active {
+  box-shadow: 0 0 10px darken(@base, 10%) inset, 0px 1px 0 lighten(@base, 10%);
+  color: lighten(@color, 30%);
+  background: darken(@base, 10%);
+}
+
+.btnSignin.spinning {
+  left: 45%;
+  position: absolute;
+  background-color: @base;
+  padding-right: 40px;
+}
+.btnSignin.spinning:after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  box-shadow: 0px 0px 0 1px darken(@base, 10%);
+  position: absolute;
+  border-radius: 50%;
+  animation: rotate360 0.5s infinite linear, exist 0.1s forwards ease;
+}
+
+.btnSignin.spinning:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  right: 6px;
+  top: 50%;
+  position: absolute;
+  border: 2px solid darken(@base, 40%);
+  border-right: 3px solid @accent;
+  animation: rotate360 0.5s infinite linear, exist 0.1s forwards ease;
+}
+
+@keyframes rotate360 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes exist {
+  100% {
+    width: 15px;
+    height: 15px;
+    margin: -8px 5px 0 0;
+  }
+}
